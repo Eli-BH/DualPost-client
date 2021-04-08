@@ -10,6 +10,7 @@ const App = () => {
   const [linkedinAuthed, setLinkedInAuth] = useState(false);
   const [twitterUserData, setTwitterData] = useState({});
   const [linkedInData, setLinkedInData] = useState({});
+  const [post, setPost] = useState("");
 
   useEffect(() => {
     async function getTwitterUser() {
@@ -47,15 +48,19 @@ const App = () => {
 
   const sendPost = async (e) => {
     e.preventDefault();
-    const linkedInResponse = await axios.get(
-      "http://localhost:3001/linkedin/share"
+    const linkedInResponse = await axios.post(
+      "http://localhost:3001/linkedin/share",
+      { post }
     );
     const twitterResponse = await axios.post(
-      "http://localhost:3001/twitter/post"
+      "http://localhost:3001/twitter/post",
+      { post }
     );
 
     console.log(twitterResponse);
     console.log(linkedInResponse);
+
+    console.log(post);
   };
 
   const logout = async (e) => {
@@ -79,8 +84,20 @@ const App = () => {
       {twitterAuthed && linkedinAuthed ? (
         <div className="post-container">
           <form className="post-form" onSubmit={sendPost}>
-            <input type="text" />
-            <input type="text" />
+            <label htmlFor="postFormText" aria-readonly />
+
+            <textarea
+              id="post-form-text"
+              aria-label="enter post"
+              name="postFormText"
+              rows="6"
+              cols="90"
+              maxLength="280"
+              placeholder="Enter your post"
+              value={post}
+              onChange={(e) => setPost(e.target.value)}
+            ></textarea>
+
             <button type="submit">Dual Post</button>
           </form>
           <button onClick={logout}>logout</button>
