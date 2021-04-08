@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Mulish&display=swap");
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  background-color: steelblue;
+  color: white;
+  font-family: "Mulish", sans-serif;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 5px;
+  min-width: 600px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#twitter-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 350px;
+  background-color: #1ea1f1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#twitter-div:hover {
+  transform: scale(0.98);
+  opacity: 0.89;
+}
+
+#twitter-div svg {
+  font-size: 3.2rem;
+  align-self: center;
+}
+#twitter-div p {
+  font-size: 25px;
+}
+
+#linkedin-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 350px;
+  background-color: #0b66c2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#linkedin-div:hover {
+  transform: scale(0.98);
+  opacity: 0.89;
+}
+
+#linkedin-div svg {
+  font-size: 3.2rem;
+  align-self: center;
+}
+#linkedin-div p {
+  font-size: 25px;
+}
+
+#break {
+  border: 1px solid rgba(16, 39, 61, 0.294);
+  width: 100%;
+}
+
+.linkedin-container,
+.twitter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#authed {
+  margin-left: 30px;
+  font-size: 30px;
+}
+
+.header {
+  display: flex;
+  font-family: "Dela Gothic One", cursive;
+  font-size: 2rem;
+}
+
+.multi {
+  color: black;
+  padding: 5px 40px;
+  background-color: rgba(255, 219, 17, 0.815);
+
+  border-bottom-left-radius: 15px;
+}
+.post {
+  padding: 5px 40px;
+  background-color: rgba(0, 0, 0, 0.678);
+  border-top-right-radius: 15px;
 }
