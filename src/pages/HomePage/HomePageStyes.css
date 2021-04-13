@@ -78,3 +78,25 @@
   color: white;
   background-color: rgba(248, 64, 64, 0.856);
 }
+
+@media screen and (max-width: 850px) {
+  .homepage-container {
+    height: 260px;
+    width: 350px;
+    padding: 10px;
+  }
+
+  #homepage-text {
+    font-size: 13px;
+    width: 330px;
+    height: 150px;
+    padding: 10px;
+  }
+
+  .homepage-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
