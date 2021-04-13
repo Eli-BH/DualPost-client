@@ -14,7 +14,6 @@ const LoginPage = () => {
     axios
       .get("http://localhost:3001/twitter/getuser")
       .then((res) => {
-        console.log(res.data);
         if (res.data.linkedInUser.user && res.data.twitterUser.user) {
           setAuthed(true);
         }

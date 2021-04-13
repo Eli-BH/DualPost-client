@@ -22,9 +22,6 @@ const HomePage = () => {
   useEffect(() => {
     axios
       .get("http://localhost:3001/twitter/getuser")
-      .then((res) => {
-        console.log(res.data);
-      })
       .catch((err) => console.log(err));
   }, []);
 
