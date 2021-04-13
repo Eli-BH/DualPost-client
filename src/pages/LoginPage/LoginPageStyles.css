@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  background-color: rgba(0, 0, 5, 0.4);
+  height: 460px;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 5, 0.616), 0px 0px 4px rgba(0, 0, 5, 0.616);
+}
+
+.login-container h3 {
+  align-self: center;
+  color: white;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.twitter-button {
+  width: 270px;
+  height: 70px;
+  align-self: center;
+  display: flex;
+  background-color: #1ea1f1;
+  color: white;
+  padding: 20px;
+  justify-content: space-between;
+  font-size: 23px;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 5, 0.616);
+  transition: transform 0.1s ease-in;
+}
+.login-divider {
+  width: 90%;
+  border: solid rgba(0, 0, 0, 0.157) 1px;
+  align-self: center;
+}
+
+.linkedin-button {
+  width: 270px;
+  height: 70px;
+  align-self: center;
+  display: flex;
+  background-color: #0b66c2;
+  color: white;
+  padding: 20px;
+  justify-content: space-between;
+  font-size: 23px;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 1px 2px 4px rgba(0, 0, 5, 0.616);
+  transition: transform 0.1s ease-in;
+}
+
+.twitter-button:hover,
+.linkedin-button:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  .login-container {
+    background-color: rgba(0, 0, 10, 0.459);
+    height: 260px;
+    width: 360px;
+  }
+
+  .login-container h3 {
+    font-size: 12px;
+  }
+
+  .linkedin-button,
+  .twitter-button {
+    width: 170px;
+    height: 50px;
+    padding: 18px;
+    font-size: 12px;
+  }
+}
