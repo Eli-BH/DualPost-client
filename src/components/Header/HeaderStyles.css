@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+.header {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  font-family: "Marcellus", serif;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-dual {
+  background-color: rgb(255, 255, 111);
+  padding: 30px 40px;
+  padding-right: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.header-post {
+  background-color: rgb(10, 1, 17);
+  color: white;
+  padding: 30px 40px;
+  padding-left: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
