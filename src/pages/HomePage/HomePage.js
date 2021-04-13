@@ -7,8 +7,16 @@ import axios from "axios";
 const HomePage = () => {
   const [postText, setPostText] = useState("");
 
-  const sendPost = () => {
-    toast.success("Post Sent");
+  const sendPost = async () => {
+    try {
+      const response = await axios.post("http://localhost:3001/post", {
+        post: postText,
+      });
+      if (response.status === 200) toast.success("Posted!");
+      setPostText("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
