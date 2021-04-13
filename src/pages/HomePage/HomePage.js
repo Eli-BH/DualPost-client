@@ -9,9 +9,12 @@ const HomePage = () => {
 
   const sendPost = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/post", {
-        post: postText,
-      });
+      const response = await axios.post(
+        "https://dual-post-server.herokuapp.com/post",
+        {
+          post: postText,
+        }
+      );
       if (response.status === 200) toast.success("Posted!");
       setPostText("");
     } catch (error) {
@@ -21,7 +24,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/twitter/getuser")
+      .get("https://dual-post-server.herokuapp.com/twitter/getuser")
       .catch((err) => console.log(err));
   }, []);
 
@@ -45,7 +48,7 @@ const HomePage = () => {
           <button onClick={sendPost} id="send-post-btn">
             Post
           </button>
-          <a href="http://localhost:3001/logout">
+          <a href="https://dual-post-server.herokuapp.com/logout">
             <button id="logout">Logout</button>
           </a>
           <ToastContainer
