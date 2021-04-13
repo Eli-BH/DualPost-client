@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+Pro&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-container {
+  background-color: rgba(0, 0, 5, 0.4);
+  height: 460px;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 5, 0.616), 0px 0px 4px rgba(0, 0, 5, 0.616);
+}
+
+#homepage-text {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  word-wrap: break-word;
+  resize: none;
+  padding: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+#homepage-text:focus {
+  outline: none;
+}
+
+.text-area-container {
+  position: relative;
+}
+
+#char-count {
+  font-family: "Source Sans Pro", sans-serif;
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+}
+
+.homepage-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-buttons button {
+  padding: 15px;
+  width: 100px;
+  margin: 15px;
+  font-size: 16px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 5, 0.616);
+  transition: transform 0.1s ease-in;
+  border: none;
+}
+
+.homepage-buttons button:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+.homepage-buttons button:focus {
+  outline: none;
+}
+
+#send-post-btn {
+  background-color: rgb(68, 66, 209);
+  color: white;
+}
+
+#logout {
+  color: white;
+  background-color: rgba(248, 64, 64, 0.856);
+}

@@ -1,10 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./HomePageStyes.css";
+import axios from "axios";
 
 const HomePage = () => {
+  const [postText, setPostText] = useState("");
+
+  const sendPost = () => {
+    toast.success("Post Sent");
+  };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/twitter/getuser")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
-    <div>
-      <h1>This is the home page</h1>
-    </div>
+    <>
+      <div className="homepage-container">
+        <div className="text-area-container">
+          <textarea
+            id="homepage-text"
+            rows="7"
+            cols="50"
+            value={postText}
+            onChange={(e) => setPostText(e.target.value)}
+            placeholder="Enter post here"
+            maxLength="280"
+            autoFocus
+          />
+          <p id="char-count">{280 - postText.length}</p>
+        </div>
+        <div className="homepage-buttons">
+          <button onClick={sendPost} id="send-post-btn">
+            Post
+          </button>
+          <a href="http://localhost:3001/logout">
+            <button id="logout">Logout</button>
+          </a>
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        </div>
+      </div>
+    </>
   );
 };
 
