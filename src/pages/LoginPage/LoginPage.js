@@ -11,6 +11,7 @@ const LoginPage = () => {
   const [linkedinAuthed, setLinkedinAuthed] = useState(false);
 
   useEffect(() => {
+    //get the user data
     axios
       .get("https://dual-post-server.herokuapp.com/twitter/getuser")
       .then((res) => {
