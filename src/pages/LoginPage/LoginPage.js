@@ -11,9 +11,8 @@ const LoginPage = () => {
   const [linkedinAuthed, setLinkedinAuthed] = useState(false);
 
   useEffect(() => {
-    //get the user data
     axios
-      .get("https://dual-post-server.herokuapp.com/twitter/getuser")
+      .get("http://localhost:3001/twitter/getuser")
       .then((res) => {
         if (res.data.linkedInUser.user && res.data.twitterUser.user) {
           setAuthed(true);
@@ -30,7 +29,7 @@ const LoginPage = () => {
       <div className="login-container">
         <h3>Please login with both Twitter and LinkedIn</h3>
         <div className="button-container">
-          <a href="https://dual-post-server.herokuapp.com/auth/twitter/login">
+          <a href="http://localhost:3001/auth/twitter/login">
             <div className="twitter-button">
               <FaTwitter id="fa-twitter" />
               <hr />
@@ -42,7 +41,7 @@ const LoginPage = () => {
 
         <div className="login-divider"></div>
         <div className="button-container">
-          <a href="https://dual-post-server.herokuapp.com/auth/linkedin/login">
+          <a href="http://localhost:3001/auth/linkedin/login">
             <div className="linkedin-button">
               <FaLinkedin id="fa-linkedin" />
               <hr />
